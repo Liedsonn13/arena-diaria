@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arena Diária - Jornal Esportivo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header-principal">
+        <div class="container header-content">
+            <div>
+                <h1>Arena Diária</h1>
+                <p>Sua dose diária de notícias esportivas</p>
+            </div>
+            <!-- Botão de acessibilidade para alternar tema de cores -->
+            <button id="btnAlternarTema" class="btn-tema" aria-label="Alternar tema de alto contraste">🌓 Alternar Tema</button>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Seção de Filtros e Busca (Acessível) -->
+        <section class="painel-controle" aria-label="Filtros e Busca de Notícias">
+            <div class="grupo-busca">
+                <label for="inputBusca">Buscar notícia ou modalidade:</label>
+                <input type="text" id="inputBusca" placeholder="Ex: Futebol, Basquete, Vôlei..." aria-describedby="ajudaBusca">
+                <small id="ajudaBusca" class="sr-only">Digite para filtrar a lista instantaneamente</small>
+            </div>
+
+            <div class="grupo-botoes">
+                <button id="btnFiltroVivo" aria-pressed="false" class="btn-filtro">🔥 Apenas Ao Vivo</button>
+            </div>
+        </section>
+
+        <!-- Resumo dinâmico com aria-live="polite" exigido pela atividade -->
+        <section class="resumo-edicao" aria-live="polite" id="resumoEdicao" tabindex="0">
+            Carregando resumo da edição...
+        </section>
+
+        <!-- Grid de Notícias -->
+        <section class="grid-noticias" id="gridNoticias" aria-label="Lista de Notícias Esportivas">
+            <!-- Os cards serão injetados aqui via JavaScript -->
+        </section>
+    </main>
+
+    <footer class="footer-principal">
+        <div class="container">
+            <p>&copy; 2026 Arena Diária. Projeto Acadêmico Front-end.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js" defer></script>
+</body>
+</html>
